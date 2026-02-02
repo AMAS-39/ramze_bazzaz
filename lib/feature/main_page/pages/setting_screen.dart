@@ -5,6 +5,7 @@ import 'package:app/feature/account/presentation/bloc/account/account_bloc.dart'
 import 'package:app/feature/account/presentation/views/profiles_widgets.dart';
 import 'package:app/feature/attachments/data/models/attachments_filter.dart';
 import 'package:app/feature/attachments/presentation/view/pages/attachments_screen.dart';
+import 'package:app/feature/stock/presentation/view/pages/stock_screen.dart';
 import 'package:app/feature/main_page/bloc/tabs_bloc.dart';
 import 'package:app/feature/packages/data/models/packages_filter.dart';
 import 'package:app/feature/packages/presentation/view/pages/packages_screen.dart';
@@ -43,6 +44,15 @@ class _SettingScreenState extends State<SettingScreen> {
             icon: Icons.shopping_bag_sharp,
             screen: Screens.packages,
             title: Trans.packages.trans(context: context),
+          ),
+          const Divider(),
+          DrawerBtn(
+            onTap: () {
+              context.to(const StockScreen());
+            },
+            icon: Icons.inventory_2_outlined,
+            screen: Screens.stock,
+            title: Trans.stockTitle.trans(context: context),
           ),
           const Divider(),
           DrawerBtn(

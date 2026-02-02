@@ -20,6 +20,7 @@ import 'package:app/feature/main_page/bloc/tabs_bloc.dart';
 import 'package:app/feature/notifications/notification.dart';
 import 'package:app/feature/packages/package.dart';
 import 'package:app/feature/pay_insteads/pay_instead.dart';
+import 'package:app/feature/stock/stock.dart';
 import 'package:app/feature/payments/payment.dart';
 import 'package:app/feature/slides/slide.dart';
 import 'package:get_it/get_it.dart';
@@ -74,6 +75,7 @@ Future<void> _registerBlocs() async {
   ContainerExpenseFeature.init();
   CustomerDoubleEntryFeature.init();
   SlideFeature.init();
+  StockFeature.init();
 }
 
 //Exam schedule
@@ -87,5 +89,6 @@ Future<void> reInitRegisterBlocs() async {
   ContainerExpenseFeature.reInitBloc();
   CustomerDoubleEntryFeature.reInitBloc();
   SlideFeature.reInitBloc();
+  // Stock has no singleton bloc
 }
 //

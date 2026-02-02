@@ -1,5 +1,6 @@
 import 'package:app/core/shared/imports.dart';
 import 'package:app/feature/account/presentation/views/profiles_widgets.dart';
+import 'package:app/feature/stock/presentation/view/pages/stock_screen.dart';
 import 'package:app/feature/main_page/bloc/tabs_bloc.dart';
 import 'package:app/startup/onboarding/page/langguage_screen.dart';
 import 'package:app/widgets/app_version_widget.dart';
@@ -60,6 +61,15 @@ class _AppDrawerState extends State<AppDrawer> {
               icon: Icons.shopping_bag_sharp,
               screen: Screens.packages,
               title: Trans.packages.trans(context: context),
+            ),
+            DrawerBtn(
+              icon: Icons.inventory_2_outlined,
+              screen: Screens.stock,
+              title: Trans.stockTitle.trans(context: context),
+              onTap: () {
+                context.pop();
+                context.to(const StockScreen());
+              },
             ),
             DrawerBtn(
               icon: Icons.search_outlined,

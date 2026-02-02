@@ -390,6 +390,11 @@ class Trans {
   static String crop = "crop";
   static String operationFalied = "operationFalied";
   static String status = "status";
+  static String stock = "stock";
+  static String stockTitle = "stockTitle";
+  static String stockSearchHint = "stockSearchHint";
+  static String stockNoStockFound = "stockNoStockFound";
+  static String weight = "weight";
   static String notAccepted = "notAccepted";
   static String agree = "agree";
   static String dontAgree = "dontAgree";

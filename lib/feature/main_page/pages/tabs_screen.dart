@@ -19,6 +19,7 @@ import 'package:app/feature/pay_insteads/presentation/view/pages/pay_insteads_sc
 import 'package:app/feature/pay_insteads/presentation/view/pages/pay_returns_screen.dart';
 import 'package:app/feature/payments/data/models/payments_filter.dart';
 import 'package:app/feature/payments/presentation/view/pages/payments_screen.dart';
+import 'package:app/feature/stock/presentation/view/pages/stock_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,6 +60,7 @@ class _RbbTabScreenState extends State<RbbTabScreen> {
                         AttachmentsFilterModel(setNumber: firstSet)),
                 Screens.packages: const PackagesScreen(
                     filterController: PackagesFilterModel(setNumber: firstSet)),
+                Screens.stock: const StockScreen(),
                 Screens.container: const SearchForContainerScreen(),
                 Screens.trackContainer: const TrackContainerScreen(),
                 Screens.containerExpenses: const ContainerExpensesScreen(
@@ -139,6 +141,7 @@ class _OtherTabScreenState extends State<OtherTabScreen> {
                         AttachmentsFilterModel(setNumber: firstSet)),
                 Screens.packages: const PackagesScreen(
                     filterController: PackagesFilterModel(setNumber: firstSet)),
+                Screens.stock: const StockScreen(),
                 Screens.container: const SearchForContainerScreen(),
                 Screens.trackContainer: const TrackContainerScreen(),
                 Screens.settings: const SettingScreen(),

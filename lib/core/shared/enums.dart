@@ -255,6 +255,7 @@ enum Screens {
   payReturns,
   attachments,
   packages,
+  stock,
   customerDoubleEntries,
   container,
   trackContainer,

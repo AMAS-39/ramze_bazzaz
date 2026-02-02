@@ -29,4 +29,5 @@ static String slides = "/GetFrontSliders";
   static String containers = "/GetContainerInfo";
   static String containerExpenses = "/GetExpenses";
   static String customerDoubleEntries = "/CustomerDoubleEntries";
+  static String getCustomerStock = "/GetCustomerStock";
 }
