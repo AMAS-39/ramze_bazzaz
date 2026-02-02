@@ -1,0 +1,122 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    namespace "com.ramze.rbb"
+    compileSdk 36
+    ndkVersion flutter.ndkVersion
+
+   packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+         coreLibraryDesugaringEnabled true
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com"
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    } 
+    signingConfigs {
+        kosto {
+            def keystorePropertiesFile = rootProject.file("kostolog.properties")
+            def keystoreProperties = new Properties()
+            keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        } 
+        rbb {
+            def keystorePropertiesFile = rootProject.file("rbb.properties")
+            def keystoreProperties = new Properties()
+            keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            // Resolve keystore path relative to rootProject (android directory)
+            def keystorePath = keystoreProperties['storeFile']
+            storeFile rootProject.file(keystorePath)
+            storePassword keystoreProperties['storePassword']
+        } 
+    }
+
+    // buildTypes {
+    //     release {
+    //          signingConfig signingConfigs.release
+    //     } 
+    //     kosto {
+    //          signingConfig signingConfigs.kosto
+    //     } 
+    //     rbb {
+    //          signingConfig signingConfigs.rbb
+    //     }  debug {
+    //          signingConfig signingConfigs.debug
+    //     }
+    // }        
+    flavorDimensions "default"  
+                productFlavors {
+                    rbb {
+                        dimension "default"
+                        applicationIdSuffix ".ramze.rbb"
+                        resValue "string", "app_name", "Ramze Bazzaz"
+                        versionNameSuffix ""
+                        signingConfig signingConfigs.rbb
+                    }
+                    kosto {
+                        dimension "default"
+                        applicationIdSuffix ".techeye.kostolog"
+                        resValue "string", "app_name", "Kosto Log"
+                        versionNameSuffix ""
+                        signingConfig signingConfigs.rbb
+                    }
+              
+                    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.1'
+      coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
+
+
+}

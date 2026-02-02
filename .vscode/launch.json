@@ -1,0 +1,90 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "rbb",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "rbb",
+                "--dart-define",
+                "app=rbb",
+                "--target",
+                "lib/main.dart"
+            ]
+        },
+        {
+            "name": "rbb (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "args": [
+                "--flavor",
+                "rbb",
+                "--dart-define",
+                "app=rbb",
+                "--target",
+                "lib/main.dart"
+            ]
+        },
+        {
+            "name": "rbb (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "args": [
+                "--flavor",
+                "rbb",
+                "--dart-define",
+                "app=rbb",
+                "--target",
+                "lib/main.dart"
+            ]
+        },
+        {
+            "name": "kosto",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "kosto",
+                "--dart-define",
+                "app=kosto",
+                "--target",
+                "lib/main.dart"
+            ]
+        },
+        {
+            "name": "kosto (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "args": [
+                "--flavor",
+                "kosto",
+                "--dart-define",
+                "app=kosto",
+                "--target",
+                "lib/main.dart"
+            ]
+        },
+        {
+            "name": "kosto (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "args": [
+                "--flavor",
+                "kosto",
+                "--dart-define",
+                "app=kosto",
+                "--target",
+                "lib/main.dart"
+            ]
+        }
+    ]
+}

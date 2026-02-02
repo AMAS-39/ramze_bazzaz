@@ -1,0 +1,75 @@
+name: app
+description: app
+
+publish_to: "none" 
+version: 1.0.51+51
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.1.2
+  flutter_cube:
+  dchs_motion_sensors:
+  flutter_local_notifications: ^18.0.0
+  firebase_messaging:
+  http: 
+  collection: ^1.19.1
+  html:
+  flutter_widget_from_html: ^0.15.3
+  connectivity_plus: ^6.1.0
+  intl: 0.19.0
+  share_plus:
+  webcontent_converter: ^0.0.9+4
+  flutter_inappwebview: ^6.1.5
+  equatable:
+  pretty_dio_logger:
+  firebase_core: ^3.7.0
+  firebase_crashlytics: ^4.1.4
+  lecle_downloads_path_provider:
+  fluttertoast: ^8.2.8
+  shared_preferences: ^2.3.2
+  cached_network_image: ^3.4.1
+  flutter_secure_storage: ^9.2.2
+  path:
+  skeletonizer:
+  flutter_bloc: ^8.1.6
+  get_it:
+  flutter_svg:
+  smooth_page_indicator:
+  photo_view: ^0.15.0
+  package_info_plus:
+  dio: ^5.7.0
+  path_provider: ^2.1.5
+  device_info_plus:
+  overlay_support: ^2.1.0
+  url_launcher: 
+  flutter_spinkit: ^5.2.1
+dependency_overrides:
+  collection: ^1.18.0
+  js: ^0.7.1
+  intl:  0.19.0
+dev_dependencies:
+  flutter_lints:
+  build_runner: 2.4.13
+  flutter_gen_runner:
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/i18n/
+    - assets/flags/
+
+
+flutter_native_splash:
+  image: assets/images/playstore.png
+  image_dark: assets/images/playstore.png
+  android: true
+  ios: true
+  web: false
+  color: "#ffffff"
+  color_dark: "#ffffff"

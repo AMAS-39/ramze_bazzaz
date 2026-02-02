@@ -1,0 +1,37 @@
+async Task Refresh()
+{
+try
+{
+isBusy = true;
+var response = await MyHttpService.GetListAsync<CustomerDoubleEntryDto>(_httpClient,
+    ApiRoutes.CustomerDoubleEntriesRoute + $"?end=1000&id={Id}&sort=id&order=asc&setNumber={SetNumber}");
+    payInstead = response.Entries ?? new();
+    totalCount = response.TotalCount;
+    totalSets = response.TotalSets;
+    setItems.Clear();
+    for (int i = -1; i < totalSets; i++) { setItems.Add(i + 1); } if (AuthService.GetTenantName()=="RBB" ) if
+        (setItems.Contains(0)) { setItems.Remove(0); } // payInstead=await
+        _httpClient.GetFromJsonAsync<List<CustomerDoubleEntryDto>>(ApiRoutes.CustomerDoubleEntriesRoute +
+        $"?end=1000&id={currentCustomer.Id}&sort=id&order=asc&setNumber={SetNumber}", Helpers.MyHelpers.MyJsonOptions())
+        ?? new();
+        if (payInstead.Count > 0)
+        payInstead[0].Balance = payInstead[0].IsLost ? payInstead[0].TotalPrice : -payInstead[0].TotalPrice;
+        if (payInstead.Count > 1)
+        {
+        for (int i = 1; i < payInstead.Count; i++) { payInstead[i].Balance=payInstead[i].IsLost ? payInstead[i -
+            1].Balance + payInstead[i].TotalPrice : payInstead[i - 1].Balance - payInstead[i].TotalPrice; } } // ToWord
+            paidPriceToWord=new ToWord(payInstead.Sum(x=> x.TotalTransferAmount), new
+            CurrencyInfo(CurrencyInfo.Currencies.USD), false);
+            // paidTextPrice = "تەنها " + paidPriceToWord.ConvertToKurdish(false) + $" {("رممبی")}";
+            }
+            catch (Exception ex)
+            {
+            await MyHelpers.FireErrorSwal(Swal, ex.Message);
+            Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+            isBusy = false;
+            StateHasChanged();
+            }
+            }

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        bbody {
+            padding: 0rem;
+            margin: 0;
+            box-sizing: border-box;
+            min-height: 8.27in;
+            /* max-width: 11.69in; */
+            font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        .h5 {
+            font-size: 0.83em !important;
+        }
+
+        .header p {
+            font-size: 80%;
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .header .right,
+        .header .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 0.5rem;
+        }
+
+        .header .logo_container {
+            text-align: center;
+        }
+
+        .header .logo {
+            width: 10rem;
+        }
+
+        /* Table design */
+        .table_container {
+            /* display: flex; */
+            justify-content: center;
+            width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            table-layout: auto;
+            width: 100%;
+            margin-bottom: 0px !important;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(92, 92, 92);
+            padding: 0.4rem;
+        }
+
+        thead,
+        tfoot,
+        tbody tr td:nth-child(3),
+        td:nth-child(8) {
+            background-color: rgb(255, 244, 195);
+        }
+
+        th,
+        td {
+            font-weight: 400;
+            font-size: 65%;
+        }
+
+        .outHeader {
+            background-color: rgb(255, 244, 195);
+        }
+
+        @page {
+            @bottom-left {
+                content: counter(page) "/" counter(pages);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div dir="rtl" class="bbody" id="content">
+        <!-- !Header -->
+        <div class="header" style="font-size:0.83em !important">
+            <div class="right">
+                <p>شركة رمزی بزاز للتجارة العامة و النقل</p>
+                <p>كۆمپانیای ڕەمزی بەزاز بۆ بازرگانی گشتی و گواستنەوە</p>
+                <p>هەولێر - ڤانە مۆل - نھۆمی دووەم - ژمارە E12</p>
+                <p dir="ltr">0750 433 8848 - 0750 314 4911</p>
+                <hr style="border: 1px solid black; width: 100%" />
+                <p style="font-size:15px">@currentCustomer.FullName - حساب</p>
+            </div>
+            <div class="logo_container">
+                <img src="https://i.ibb.co/HqW5bkx/rbbColor.png" alt="" class="logo" />
+            </div>
+            <div class="left" dir="ltr">
+                <p style="font-weight: 500">RAMZE BAZZAZ Trading Co., Ltd.</p>
+                <p><strong> Tel CN: </strong> 0086-020-61205016</p>
+                <p><strong>Mobile EBL: </strong> 00964-7504338848</p>
+                <p><strong>Mobile CN: </strong> 0086-13822254030</p>
+                <p><strong>Email: </strong> ramzebazzazcompany@hotmail.com</p>
+                <p><strong>Email: </strong> ramzebazzazarbil@hotmail.com</p>
+                <p>
+                    <strong>Add: </strong> China, Guangzhou, Jianshe 6th Rd., Yian
+                    Palaza, Room 1703
+                </p>
+            </div>
+        </div>
+        <!-- !Table -->
+        <div class="table_container">
+            <table class="table" dir="ltr">
+                <tbody>
+                    <tr class="outHeader">
+                        <th colspan="14">
+                            <strong>
+                                شركة رمزی البزاز لیس مسؤل عن تأخیر حاویات ما الصین او
+                                الامارات او تركیا او ایران ولیس مسۆول عن اغلاق المیناء او
+                                الحدود من قبل الحكومة
+                            </strong>
+                        </th>
+                    </tr>
+                    <tr class="outHeader">
+                        <th colspan="14">
+                            <strong>
+                                ولیس مسؤل عن تغیر أیقرارات الحكومیة من قبل حكومة (المركزیة او
+                                الاقلیم) (الغرامات و الضرائب والكمرك والمواد ممنوعة) - التاجر
+                                ھو مسؤل علیە
+                            </strong>
+                        </th>
+                    </tr>
+                    <tr class="outHeader">
+                        <th>Amount ¥</th>
+                        <th>C.C. %</th>
+                        <th>Total ¥</th>
+                        <th>Price ¥</th>
+                        <th>Amount $</th>
+                        <th>T.C. $</th>
+                        <th>O.Amount $</th>
+                        <th>Total $</th>
+                        <th>Date</th>
+                        <th>Shop No</th>
+                        <th>Shop/Invoice</th>
+                        <th>Write Total</th>
+                        <th>Carton</th>
+
+                    </tr>
+                    <!-- @foreach (var item in payInstead)
+                    { -->
+                    <tr>
+                        <td>@item.TransferAmount.ToString("N0")</td>
+                        <td>@item.Commission.ToString("N0")</td>
+                        <td>@item.TotalTransferAmount.ToString("N2")</td>
+                        <td>@item.ExchangeRate.ToString("N3")</td>
+                        <td>@item.Price.ToString("N2")</td>
+                        <td>@item.ExpensePrice.ToString("N0")</td>
+                        <td>@item.OtherPrice.ToString("N0")</td>
+                        <td>@((item.IsLost ? (item.TotalPrice + item.ForgivePrice) : -(item.TotalPrice +
+                            item.ForgivePrice)).ToString("N2"))</td>
+                        <td>@item.Date.ToYYYYMMDD()</td>
+                        <td>@(item.ShopNumber)</td>
+                        <td>@(item.IsLost ? item.ShopName : item.InvoiceNumber)</td>
+                        <td></td>
+                        <td></td>
+
+
+                    </tr>
+                    <!-- } -->
+                    <!--Footer-->
+                    <tr class="outHeader">
+                        <td>@(payInstead.Sum(x => x.TransferAmount).ToString("N0")) ¥</td>
+                        <td></td>
+                        <td>@(payInstead.Sum(x => x.TotalTransferAmount).ToString("N0")) ¥</td>
+                        <td></td>
+                        <td>@(payInstead.Sum(x => x.Price).ToString("N2")) </td>
+                        <td colspan="2">@paidTextPrice</td>
+                        <td>@(payInstead.Sum(x => x.IsLost ? (x.TotalPrice + x.ForgivePrice) : -(x.TotalPrice +
+                            x.ForgivePrice)).ToString("N3"))</td>
+                        <td colspan="6">
+                            <p>
+                                علامة (-) تاجر باقي حسابه عند شركة
+                                &nbsp; || &nbsp;
+                                علامة (+) تاجر يدين لشركة
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot style="text-align: center">
+                </tfoot>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
