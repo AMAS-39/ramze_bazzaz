@@ -54,6 +54,10 @@ class PayReturnWidget extends StatelessWidget {
               icon: null,
             ),
             _MyWidget(
+                title: Trans.unitPrice.trans(),
+                value: payInstead.price.formatUSD,
+                icon: null),
+            _MyWidget(
                 title: Trans.totalPrice.trans(),
                 value: payInstead.totalPrice.formatUSD,
                 icon: null),

@@ -16,6 +16,7 @@ class PackageModel extends Equatable {
   final double qty;
   final double cbm;
   final double totalPrice;
+  final double unitPrice;
   final String? attachment;
   final DateTime? deadline;
   final int setNumber;
@@ -40,6 +41,7 @@ class PackageModel extends Equatable {
     required this.qty,
     required this.cbm,
     required this.totalPrice,
+    required this.unitPrice,
     this.attachment,
     this.deadline,
     required this.setNumber,
@@ -66,6 +68,7 @@ class PackageModel extends Equatable {
     double? qty,
     double? cbm,
     double? totalPrice,
+    double? unitPrice,
     String? attachment,
     DateTime? deadline,
     int? setNumber,
@@ -91,6 +94,7 @@ class PackageModel extends Equatable {
       qty: qty ?? this.qty,
       cbm: cbm ?? this.cbm,
       totalPrice: totalPrice ?? this.totalPrice,
+      unitPrice: unitPrice ?? this.unitPrice,
       attachment: attachment ?? this.attachment,
       deadline: deadline ?? this.deadline,
       setNumber: setNumber ?? this.setNumber,
@@ -119,6 +123,7 @@ class PackageModel extends Equatable {
       'qty': qty,
       'cbm': cbm,
       'totalPrice': totalPrice,
+      'unitPrice': unitPrice,
       'attachment': attachment,
       'deadline': deadline?.toIso8601String(),
       'setNumber': setNumber,
@@ -134,6 +139,12 @@ class PackageModel extends Equatable {
   }
 
   factory PackageModel.fromMap(Map<String, dynamic> map) {
+    final totalPrice = checkDouble(map['totalPrice']);
+    final qty = checkDouble(map['qty']);
+    final unitPriceRaw = map['unitprice'] ?? map['unit_price'] ?? map['unitPrice'] ?? map['price'];
+    final unitPrice = unitPriceRaw != null
+        ? checkDouble(unitPriceRaw)
+        : (qty > 0 ? totalPrice / qty : 0.0);
     return PackageModel(
       id: checkInt(map['id']),
       invoiceNumber: map['invoiceNumber'],
@@ -144,9 +155,10 @@ class PackageModel extends Equatable {
       width: checkDouble(map['width']),
       length: checkDouble(map['length']),
       weight: checkDouble(map['weight']),
-      qty: checkDouble(map['qty']),
+      qty: qty,
       cbm: checkDouble(map['cbm']),
-      totalPrice: checkDouble(map['totalPrice']),
+      totalPrice: totalPrice,
+      unitPrice: unitPrice,
       attachment: map['attachment'],
       deadline: DateTime.tryParse(map['deadline'] ?? ""),
       setNumber: checkInt(map['setNumber']),
@@ -168,7 +180,7 @@ class PackageModel extends Equatable {
 
   @override
   String toString() {
-    return 'PackageModel(id: $id, invoiceNumber: $invoiceNumber, description: $description, date: $date, packageStatus: $packageStatus, height: $height, width: $width, length: $length, weight: $weight, qty: $qty, cbm: $cbm, totalPrice: $totalPrice, attachment: $attachment, deadline: $deadline, setNumber: $setNumber, sort: $sort, bgColor: $bgColor, itemName: $itemName, itemId: $itemId, container: $container, containerId: $containerId, customerName: $customerName, customerId: $customerId)';
+    return 'PackageModel(id: $id, invoiceNumber: $invoiceNumber, description: $description, date: $date, packageStatus: $packageStatus, height: $height, width: $width, length: $length, weight: $weight, qty: $qty, cbm: $cbm, totalPrice: $totalPrice, unitPrice: $unitPrice, attachment: $attachment, deadline: $deadline, setNumber: $setNumber, sort: $sort, bgColor: $bgColor, itemName: $itemName, itemId: $itemId, container: $container, containerId: $containerId, customerName: $customerName, customerId: $customerId)';
   }
 
   @override
@@ -186,6 +198,7 @@ class PackageModel extends Equatable {
       qty,
       cbm,
       totalPrice,
+      unitPrice,
       attachment,
       deadline,
       setNumber,

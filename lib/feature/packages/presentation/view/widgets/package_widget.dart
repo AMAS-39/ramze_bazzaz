@@ -41,6 +41,12 @@ class PackageWidget extends StatelessWidget {
                 value: package.totalPrice.formatUSD,
               ),
               _MyWidget(
+                icon: Icons.monetization_on_outlined,
+                iconColor: Colors.green.shade600,
+                title: Trans.unitPrice.trans(),
+                value: package.unitPrice.formatUSD,
+              ),
+              _MyWidget(
                 icon: Icons.inventory_2_outlined,
                 iconColor: Colors.blue.shade700,
                 title: Trans.qty.trans(),

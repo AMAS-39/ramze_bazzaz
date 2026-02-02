@@ -57,6 +57,7 @@ class Trans {
   static String expensePrice = "expensePrice";
   static String otherPrice = "otherPrice";
   static String totalPrice = "totalPrice";
+  static String unitPrice = "unitPrice";
   static String cbm = "cbm";
   static String qty = "qty";
 

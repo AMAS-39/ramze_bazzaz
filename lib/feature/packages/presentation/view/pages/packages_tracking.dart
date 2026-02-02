@@ -78,6 +78,7 @@ class PackagesTrackingState extends State<PackagesTracking> {
                         qty: 0,
                         cbm: 0,
                         totalPrice: 0,
+                        unitPrice: 0,
                         setNumber: 0,
                         sort: 0,
                         itemId: 0,

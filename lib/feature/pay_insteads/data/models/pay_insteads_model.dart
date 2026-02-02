@@ -147,7 +147,7 @@ class PayInsteadModel extends Equatable {
       safeboxName: map['safeboxName'],
       attachment: formatAttachment(map['attachment']),
       date: DateTime.parse(map['date']),
-      price: checkDouble(map['price']),
+      price: checkDouble(map['unitprice'] ?? map['unit_price'] ?? map['scprice'] ?? map['price']),
       expensePrice: checkDouble(map['expensePrice']),
       otherPrice: checkDouble(map['otherPrice']),
       commission: checkDouble(map['commission']),

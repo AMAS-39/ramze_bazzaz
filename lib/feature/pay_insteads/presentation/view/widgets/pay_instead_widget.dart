@@ -45,9 +45,8 @@ class PayInsteadWidget extends StatelessWidget {
                 icon: null),
             _InfoWidget(
                 //5
-
-                title: "${Trans.amount.trans()} \$ ",
-                value: payInstead.price.format,
+                title: "${Trans.unitPrice.trans()} \$ ",
+                value: payInstead.price.formatUSD,
                 icon: null),
             _InfoWidget(
                 //6
