@@ -77,6 +77,16 @@ class PackageWidget extends StatelessWidget {
                 title: Trans.arrivalDate.trans(),
                 value: package.container.arrivalDate?.onlyDate ?? "",
               ),
+              if (package.container.shippingDate != null)
+                _MyWidget(
+                  icon: Icons.event_outlined,
+                  iconColor: Colors.amber.shade700,
+                  title: Trans.expectedDate.trans(),
+                  value: package
+                      .container.shippingDate!
+                      .add(const Duration(days: 45))
+                      .onlyDate,
+                ),
               if (package.container.shippingDate != null &&
                   package.container.arrivalDate == null &&
                   appConfig.app.isRbb)

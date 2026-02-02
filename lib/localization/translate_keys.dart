@@ -12,6 +12,7 @@ class Trans {
       "youReceivedYourRequuestWiatApproval";
   static String getOne = "getOne";
   static String expectedArrivalDays = "expectedArrivalDays";
+  static String expectedDate = "expectedDate";
   static String trackContainer = "trackContainer";
   ////
   static String totalPaid = "totalPaid";
