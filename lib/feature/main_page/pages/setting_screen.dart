@@ -102,7 +102,7 @@ class _SettingScreenState extends State<SettingScreen> {
           //   screen: Screens.customerDoubleEntries,
           //   title: Trans.customerDoubleEntries.trans(context: context),
           // ),
-          // const Divider(),
+          //           const Divider(),
           DrawerBtn(
               icon: Icons.language_outlined,
               screen: Screens.language,

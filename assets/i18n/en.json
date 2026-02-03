@@ -419,5 +419,11 @@
   "youHaveNotPermissonToDoThat": "You have not permission to do that",
   "youHaveSuccessfullyRegistered": "You have successfully registered",
   "youMustAcceptOutPrivacyPolicy": "youMustAcceptOutPrivacyPolicy",
-  "yourReuestHasBeenSubmittedWeWillDeleteYourAccountInBusinessDays": "Your request has been submitted, we will delete your account in _args business days"
+  "yourReuestHasBeenSubmittedWeWillDeleteYourAccountInBusinessDays": "Your request has been submitted, we will delete your account in _args business days",
+  "statements": "Statements",
+  "pdfFile": "Statements",
+  "customerAccountStatement": "Customer Account Statement",
+  "customerPayInsteadStatement": "Customer Pay Instead Statement",
+  "statementGeneratedSuccessfully": "Statement generated successfully",
+  "payInsteadStatementGeneratedSuccessfully": "Pay Instead statement generated successfully"
 }

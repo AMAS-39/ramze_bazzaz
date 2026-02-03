@@ -30,4 +30,6 @@ static String slides = "/GetFrontSliders";
   static String containerExpenses = "/GetExpenses";
   static String customerDoubleEntries = "/CustomerDoubleEntries";
   static String getCustomerStock = "/GetCustomerStock";
+  static String customerAccountStatement = "/CustomerAccountStatement";
+  static String customerPayInsteadStatement = "/CustomerPayInsteadStatement";
 }

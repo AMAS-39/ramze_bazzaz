@@ -419,5 +419,11 @@
   "youHaveNotPermissonToDoThat": "ليس لديك إذن للقيام بذلك",
   "youHaveSuccessfullyRegistered": "لقد سجلت بنجاح",
   "youMustAcceptOutPrivacyPolicy": "يجب عليك قبول سياسة الخصوصية الخاصة بنا",
-  "yourReuestHasBeenSubmittedWeWillDeleteYourAccountInBusinessDays": "تم تقديم طلبك، سنقوم بحذف حسابك في _args أيام عمل"
+  "yourReuestHasBeenSubmittedWeWillDeleteYourAccountInBusinessDays": "تم تقديم طلبك، سنقوم بحذف حسابك في _args أيام عمل",
+  "statements": "كشوفات",
+  "pdfFile": "كشوفات PDF",
+  "customerAccountStatement": "كشف حساب العميل",
+  "customerPayInsteadStatement": "كشف الدفع بدلاً",
+  "statementGeneratedSuccessfully": "تم إنشاء الكشف بنجاح",
+  "payInsteadStatementGeneratedSuccessfully": "تم إنشاء كشف الدفع بدلاً بنجاح"
 }

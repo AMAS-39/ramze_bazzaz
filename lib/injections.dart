@@ -20,6 +20,7 @@ import 'package:app/feature/main_page/bloc/tabs_bloc.dart';
 import 'package:app/feature/notifications/notification.dart';
 import 'package:app/feature/packages/package.dart';
 import 'package:app/feature/pay_insteads/pay_instead.dart';
+import 'package:app/feature/reports/reports.dart';
 import 'package:app/feature/stock/stock.dart';
 import 'package:app/feature/payments/payment.dart';
 import 'package:app/feature/slides/slide.dart';
@@ -76,6 +77,7 @@ Future<void> _registerBlocs() async {
   CustomerDoubleEntryFeature.init();
   SlideFeature.init();
   StockFeature.init();
+  ReportsFeature.init();
 }
 
 //Exam schedule

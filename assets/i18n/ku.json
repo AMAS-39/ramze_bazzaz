@@ -419,5 +419,11 @@
   "youHaveNotPermissonToDoThat": "تۆ دەستکاریکردنەوەتان نەدۆزیت",
   "youHaveSuccessfullyRegistered": "بەسەرکەوتویی بەشداریبوویت",
   "youMustAcceptOutPrivacyPolicy": "پێویستە سیاسەتی تایبەتییەکانمان قبووڵبکەیت",
-  "yourReuestHasBeenSubmittedWeWillDeleteYourAccountInBusinessDays": "داوای سڕینەوەی هەژمارت پێشکەشکراوە، ئێمە هەژمارەکەت لە _args ڕۆژەکانی کارییەکان سڕینەوە"
+  "yourReuestHasBeenSubmittedWeWillDeleteYourAccountInBusinessDays": "داوای سڕینەوەی هەژمارت پێشکەشکراوە، ئێمە هەژمارەکەت لە _args ڕۆژەکانی کارییەکان سڕینەوە",
+  "statements": "کەشفەکان",
+  "pdfFile": "کەشفەکان PDF",
+  "customerAccountStatement": "کەشفی هەژماری موشتەری",
+  "customerPayInsteadStatement": "کەشفی لەجیاتی پارەدان",
+  "statementGeneratedSuccessfully": "کەشف بەسەرکەوتویی دروستکرا",
+  "payInsteadStatementGeneratedSuccessfully": "کەشفی لەجیاتی پارەدان بەسەرکەوتویی دروستکرا"
 }

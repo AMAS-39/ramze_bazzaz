@@ -1,5 +1,6 @@
 import 'package:app/core/shared/imports.dart';
 import 'package:app/feature/account/presentation/views/profiles_widgets.dart';
+import 'package:app/feature/reports/presentation/view/widgets/statement_options_sheet.dart';
 import 'package:app/feature/stock/presentation/view/pages/stock_screen.dart';
 import 'package:app/feature/main_page/bloc/tabs_bloc.dart';
 import 'package:app/startup/onboarding/page/langguage_screen.dart';
@@ -69,6 +70,14 @@ class _AppDrawerState extends State<AppDrawer> {
               onTap: () {
                 context.pop();
                 context.to(const StockScreen());
+              },
+            ),
+            DrawerBtn(
+              icon: Icons.picture_as_pdf_outlined,
+              screen: Screens.settings,
+              title: Trans.pdfFile.trans(context: context),
+              onTap: () {
+                showStatementOptionsSheet(context);
               },
             ),
             DrawerBtn(
@@ -143,11 +152,13 @@ class DrawerBtn extends StatelessWidget {
         hoverColor: Colors.transparent,
         highlightColor: Colors.transparent,
         onTap: () {
-          context.pop();
-
           if (onTap != null) {
+            // Custom handlers (like PDF generation) are responsible for
+            // closing the drawer or navigating as needed.
             onTap?.call();
           } else {
+            // Default behavior: close drawer then change tab.
+            context.pop();
             sl<TabsBloc>().setPage(screen);
           }
         },

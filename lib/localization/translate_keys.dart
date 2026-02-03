@@ -474,4 +474,12 @@ class Trans {
   static String middleName = "middleName";
   static String primary = "primary";
   static String endAt = "endAt";
+
+  static String statements = "statements";
+  static String pdfFile = "statements";
+  static String customerAccountStatement = "customerAccountStatement";
+  static String customerPayInsteadStatement = "customerPayInsteadStatement";
+  static String statementGeneratedSuccessfully = "statementGeneratedSuccessfully";
+  static String payInsteadStatementGeneratedSuccessfully =
+      "payInsteadStatementGeneratedSuccessfully";
 }

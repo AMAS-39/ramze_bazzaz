@@ -13,7 +13,7 @@ class Apps {
     app: App.rbb,
     fireabse: RbbDefaultFirebaseOptions(),
     test: true,
-    url: "https://ramzebazzaz.azurewebsites.net",
+    url: "https://shippingerp.azurewebsites.net",
   );
   static _Env rbb = _Env(
     test: false,
@@ -25,7 +25,7 @@ class Apps {
     appName: "Ramze Bazzaz",
     username: "rb3ys7c",
     password: "42890772",
-    url: "https://ramzebazzaz.azurewebsites.net",
+    url: "https://shippingerp.azurewebsites.net",
   );
   static _Env kostolog = _Env(
     test: false,
