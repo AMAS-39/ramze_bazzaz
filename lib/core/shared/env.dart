@@ -25,7 +25,7 @@ class Apps {
     appName: "Ramze Bazzaz",
     username: "rb3ys7c",
     password: "42890772",
-    url: "https://shippingerp.azurewebsites.net",
+    url: "https://ramzebazzaz.azurewebsites.net",
   );
   static _Env kostolog = _Env(
     test: false,
@@ -71,7 +71,7 @@ class _Env {
   });
 }
 
-_Env appConfig = Apps.stage;
+_Env appConfig = Apps.rbb;
 
 enum App { rbb, kostolog }
 

@@ -38,10 +38,6 @@ void main() async {
   } else {
     appConfig = Apps.rbb;
   }
-  // Use stage config for testing
-  if (kDebugMode) {
-    appConfig = Apps.stage;
-  }
 
   logger("=== BASE URL: ${appConfig.url} ===");
   logger("=== API BASE URL: ${appConfig.url}/api/ClientSide ===");
