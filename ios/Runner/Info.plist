@@ -50,5 +50,11 @@
 		<true />
 		<key>UIApplicationSupportsIndirectInputEvents</key>
 		<true />
-	</dict>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>This app requires microphone access for communication features and web content that may include audio recording functionality.</string>
+		<key>NSUserActivityTypes</key>
+		<array>
+			<string>INSendMessageIntent</string>
+		</array>
+</dict>
 </plist>

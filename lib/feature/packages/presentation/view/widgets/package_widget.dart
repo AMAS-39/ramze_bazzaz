@@ -162,25 +162,19 @@ class _MyWidget extends StatelessWidget {
               ),
             ),
           if (icon != null) const SizedBox(width: 10),
+          if (!checkIsNull(title))
+            Text(
+              "$title: ",
+              strutStyle: StrutStyle(forceStrutHeight: true, height: 1.1),
+              style: context.style14W400B,
+            ),
           Expanded(
-            child: Row(
-              children: [
-                if (!checkIsNull(title))
-                  Text(
-                    "$title: ",
-                    strutStyle: StrutStyle(forceStrutHeight: true, height: 1.1),
-                    style: context.style14W400B,
-                  ),
-                Flexible(
-                  child: Text(
-                    value,
-                    strutStyle: StrutStyle(forceStrutHeight: true, height: 1.1),
-                    style: context.style14W400B.copyWith(fontWeight: FontWeight.w500),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                  ),
-                ),
-              ],
+            child: Text(
+              value,
+              strutStyle: StrutStyle(forceStrutHeight: true, height: 1.1),
+              style: context.style14W400B.copyWith(fontWeight: FontWeight.w500),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
           ),
         ],
